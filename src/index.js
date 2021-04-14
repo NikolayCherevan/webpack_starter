@@ -45,17 +45,21 @@ class initProject {
 	}
 	addFlipListeners() {
 		let count = 0;
-		document.querySelectorAll('.uk-card').forEach((item,index) => {
-			if (localStorage.getItem('activeCard')==index) {
+		document.querySelectorAll('.uk-card').forEach((item, index) => {
+			if (parseInt(document.cookie.split(' ')[0].split('=')[1]) == index) {
 				item.classList.add('flipped')
-			
+
 			}
 			item.addEventListener('click', event => {
-				if (localStorage.getItem('openedState') < 1) {
+				if ( document.cookie === ''  || parseInt(document.cookie.split(' ')[1].split('=')[1]) < 1) {
 					count++;
 					event.currentTarget.classList.toggle('flipped');
-					localStorage.setItem('activeCard',index);
-					localStorage.setItem('openedState',count);
+					
+					const maxAge = 86400; // время жизни cookie
+
+					document.cookie = `activeCard=${index}; max-age=${maxAge}`;
+					document.cookie = `openedState=${count}; max-age=${maxAge}`;
+					
 				}
 				else {
 					if (event.currentTarget.classList.contains('flipped')) {
