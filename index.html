@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/css/uikit.min.css" />
     <link rel='stylesheet' href='dist/main.css'>
 </head>
+
 <body>
+    <section class="uk-container uk-container-large">
+        <div uk-grid
+            class="cards-wrapper uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center uk-grid">
+
+        </div>
+        <div class="card-wrapper uk-padding uk-padding-remove-left">
+            <button class="uk-button uk-button-primary it-cards"> it предсказания</button>
+            <button class="uk-button uk-button-secondary life-cards"> жизненные напутсвия </button>
+            <button class="uk-button uk-button-danger joke-cards"> шутка дня</button> </div>
+
+    </section>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
     <script type="text/javascript" src="dist/main.js"></script>
 </body>
+
 </html>

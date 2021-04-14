@@ -1,5 +1,17 @@
-$bg-color: green;
-
-body {
- background: $bg-color;
+.uk-card-body {
+    transition: all 300ms ease-out;
+    transform: rotateY(180deg);
+    .uk-card-title {
+        opacity: 0;
+    }
+    &.flipped {
+        transition: all 300ms ease-out;
+        transform: rotateY(0deg);
+        .uk-card-title {
+            opacity: 1;
+        }
+    }
+    .uk-card-title {
+        word-break: break-word;
+    }
 }
